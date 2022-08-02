@@ -1,38 +1,40 @@
+//NOTE: replace the ProductTag.js file in the Develop/models folder with this file
+
 const { Model, DataTypes } = require('sequelize');
+
 const sequelize = require('../config/connection');
 
 class ProductTag extends Model {}
 
 ProductTag.init(
   {
-    // define columns
     id: {
-      type:DataTypes.INTEGER,
+      type: DataTypes.INTEGER,
+      allowNull: false,
       primaryKey: true,
-      auto_increment:true,
-      allowNull: false
+      autoIncrement: true,
     },
     product_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'Product',
-        key: 'id'
-      }
+        model: 'product',
+        key: 'id',
+      },
     },
     tag_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'Tag',
-        key: 'id'
-      }
+        model: 'tag',
+        key: 'id',
+      },
+    },
   },
-},
-{
+  {
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'product_tag'
+    modelName: 'product_tag',
   }
 );
 
