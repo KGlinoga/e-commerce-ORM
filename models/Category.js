@@ -9,9 +9,9 @@ Category.init(
     // define columns
     id: {
       type:DataTypes.INTEGER,
-      allowNull: false,
       primaryKey: true,
       auto_increment: true,
+      allowNull: false
     },
      category_name: {
       type:DataTypes.STRING,
@@ -23,7 +23,7 @@ Category.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'category',
+    modelName: 'category'
   }
 );
 

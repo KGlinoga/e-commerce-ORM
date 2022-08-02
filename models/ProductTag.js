@@ -8,25 +8,31 @@ ProductTag.init(
     // define columns
     id: {
       type:DataTypes.INTEGER,
-      allowNull: false,
       primaryKey: true,
-      auto_increment:true
+      auto_increment:true,
+      allowNull: false
     },
     product_id: {
-      type:DataTypes.INTEGER,
-      // TODO: References the PRODUCT Model's id
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'Product',
+        key: 'id'
+      }
     },
     tag_id: {
-      type:DataTypes.INTEGER
-      // TODO: Referrences the TAG Model's ID. 
-    }
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'Tag',
+        key: 'id'
+      }
   },
-  {
+},
+{
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'product_tag',
+    modelName: 'product_tag'
   }
 );
 
