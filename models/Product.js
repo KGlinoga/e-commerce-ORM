@@ -12,24 +12,28 @@ Product.init(
     // define columns
     id: {
       type:DataTypes.INTEGER,
-      null: false,
+      allowNull: false,
       primaryKey: true,
       auto_increment: true,
     },
     product_name: {
       type:DataTypes.STRING,
-      null: false
+      allowNull: false,
     },
     price: {
       type:DataTypes.FLOAT,
-      null: false
-      // TODO: validates the value is a DECIMAL
+      allowNull: false,
+      validate: {
+        isDecimal: true,
+      },
     },
     stock: {
       type:DataTypes.INTEGER,
-      null: false,
-      default:10
-      // TODO: validates the value is NUMERIC
+      allowNull: false,
+      defaultValue:10,
+      validate: {
+        isNumeric: true,
+      },
     },
     category_id: {
       type:DataTypes.INTEGER
@@ -44,5 +48,7 @@ Product.init(
     modelName: 'product',
   }
 );
+
+
 
 module.exports = Product;
