@@ -3,9 +3,6 @@ const express = require('express');
 const allRoutes = require('./routes');
 // import sequelize connection
 const sequelize = require('./config/connection');
-// attempting to import seeds file
-const seeds = require('seed');
-// seedAll();
 
 const app = express();
 const PORT = process.env.PORT || 3001;
