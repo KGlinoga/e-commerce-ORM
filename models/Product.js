@@ -13,7 +13,7 @@ Product.init(
     id: {
       type:DataTypes.INTEGER,
       null: false,
-      primarykey: true,
+      primaryKey: true,
       auto_increment: true,
     },
     product_name: {
@@ -27,7 +27,7 @@ Product.init(
     },
     stock: {
       type:DataTypes.INTEGER,
-      null: false;
+      null: false,
       default:10
       // TODO: validates the value is NUMERIC
     },

@@ -9,7 +9,7 @@ Tag.init(
     id: {
       type:DataTypes.INTEGER,
       null:false,
-      primarykey:true,
+      primaryKey: true,
       auto_increment:true
     },
     tag_name: {
