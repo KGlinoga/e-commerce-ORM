@@ -1,4 +1,4 @@
-//NOTE: replace the index.js file in the Develop/models folder with this one.  
+//NOTE: newly released starter code 
 
 // import models
 const Product = require('./Product');

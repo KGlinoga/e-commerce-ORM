@@ -1,4 +1,4 @@
-//NOTE: replace the ProductTag.js file in the Develop/models folder with this file
+//NOTE: newly released starter code:
 
 const { Model, DataTypes } = require('sequelize');
 
