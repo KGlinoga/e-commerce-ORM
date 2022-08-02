@@ -10,7 +10,7 @@ class Product extends Model {}
 Product.init(
   {
     // define columns
-    product_id: {
+    id: {
       type:DataTypes.INTEGER,
       null: false,
       primarykey: true,
@@ -20,12 +20,12 @@ Product.init(
       type:DataTypes.STRING,
       null: false
     },
-    product_price: {
+    price: {
       type:DataTypes.FLOAT,
       null: false
       // TODO: validates the value is a DECIMAL
     },
-    product_stock: {
+    stock: {
       type:DataTypes.INTEGER,
       null: false;
       default:10
