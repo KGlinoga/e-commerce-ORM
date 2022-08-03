@@ -13,19 +13,26 @@ router.get('/', (req, res) => {
 })
 });
 
+// The `/api/categories/ID NUMBER` endpoint
 router.get('/:id', (req, res) => {
   // find one category by its `id` value
-  // be sure to include its associated Products
+  // TODO: be sure to include its associated Products
+  Category.findByPk(req.params.id).then((data) => {
+    res.json(data);
+  });
 });
 
+// The `/api/categories` endpoint
 router.post('/', (req, res) => {
   // create a new category
 });
 
+// The `/api/categories/ID NUMBER` endpoint
 router.put('/:id', (req, res) => {
   // update a category by its `id` value
 });
 
+// The `/api/categories/ID NUMBER` endpoint
 router.delete('/:id', (req, res) => {
   // delete a category by its `id` value
 });
