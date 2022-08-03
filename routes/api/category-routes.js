@@ -33,12 +33,37 @@ router.get('/:id', (req, res) => {
 // The `/api/categories` endpoint
 router.post('/', (req, res) => {
   // create a new category
+    Category.create({
+      category_name: req.body.category_name
+    }).then((newCategory)=>{
+      res.json(newCategory);
+    })
+    .catch(err=>{
+      res.status(500).json({msg:"huh, this isn't where I parked my car..",err});
+    });
 });
+// what  the json supposed to look like??
 
 // The `/api/categories/ID NUMBER` endpoint
 router.put('/:id', (req, res) => {
   // update a category by its `id` value
-});
+  Category.update(
+    {
+      category_name: req.body.category_name
+    }, 
+    {
+    where: {
+      id: req.params.id,
+    },
+  }).then((updatedCategory)=>{
+    res.json(updatedCategory);
+  })
+  // check here for end of product
+  .catch((err) => 
+    // console.log(err);
+    res.status(400).json(err));
+  });
+
 
 // The `/api/categories/ID NUMBER` endpoint
 router.delete('/:id', (req, res) => {
