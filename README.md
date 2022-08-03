@@ -1,6 +1,4 @@
 # e-commerce ORM 
-  
-  ![APM](https://img.shields.io/apm/l/e-commerce ORM )
 
   ## Description
   
