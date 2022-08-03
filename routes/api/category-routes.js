@@ -9,7 +9,7 @@ router.get('/', (req, res) => {
   Category.findAll().then(data=>{
     res.json(data)
 }).catch(err=>{
-    res.status(500).json({msg:"I have a bad feeling about this...",err})
+    res.status(500).json({msg:"FML",err})
 })
 });
 
@@ -17,7 +17,15 @@ router.get('/', (req, res) => {
 router.get('/:id', (req, res) => {
   // find one category by its `id` value
   // TODO: be sure to include its associated Products
-  Category.findByPk(req.params.id).then((data) => {
+  Category.findOne(
+    {where: {id: req.params.id},
+    include: [
+      Product,
+      {
+        model: Product,
+        through: Product,
+      }
+    ],}).then((data) => {
     res.json(data);
   });
 });
