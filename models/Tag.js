@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection.js');
 
-class Diet extends Model {}
+class Tag extends Model {}
 
-Diet.init(
+Tag.init(
   {
     // define columns
     id: {
@@ -21,8 +21,8 @@ Diet.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'diet'
+    modelName: 'tag'
   }
 );
 
-module.exports = Diet;
+module.exports = Tag;
